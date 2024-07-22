@@ -69,10 +69,10 @@ public class EtudiantService {
         return etudiantSearchId;
     }
 
-    public List<Etudiant> getEtudiantsByName(String nom) {
+    public List<Etudiant> getEtudiantsByName(String search) {
         List<Etudiant> etudiantSearchNom = etudiants
                 .stream()
-                .filter(e -> nom.equals(e.getNom()))
+                .filter(e -> e.getNom().toLowerCase().equals(search) || e.getPrenom().toLowerCase().equals(search))
                 .toList();
         return etudiantSearchNom;
     }
@@ -88,13 +88,12 @@ public class EtudiantService {
         return true;
     }
 
-    public void updateEtudiant(Etudiant etudiant) {
+    public Etudiant updateEtudiant(Etudiant etudiant) {
         Etudiant etudiantToUpdate = getEtudiantById(etudiant.getId());
         etudiantToUpdate.setNom(etudiant.getNom());
         etudiantToUpdate.setPrenom(etudiant.getPrenom());
         etudiantToUpdate.setEmail(etudiant.getEmail());
         etudiantToUpdate.setAge(etudiant.getAge());
-
-
+        return etudiantToUpdate;
     }
 }
