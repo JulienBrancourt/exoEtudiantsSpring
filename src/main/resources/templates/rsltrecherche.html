@@ -8,6 +8,8 @@
 </head>
 <body>
 <div class="container mt-4">
+    <div class="col-6 offset-3">
+
     <h1 class="mb-4">Résultat de la recherche</h1>
 
     <div th:if="${etudiants != null}">
@@ -25,6 +27,7 @@
     <div th:if="${etudiants.size() == 0}" class="mt-4">
         <p class="alert alert-warning">Aucun résultat trouvé</p>
         <a class="btn btn-secondary" th:href="@{/}">Retour à l'accueil</a>
+    </div>
     </div>
 </div>
 

@@ -8,21 +8,24 @@
 </head>
 <body>
 <div class="container mt-4">
-    <h1 class="mb-4">Liste des étudiants</h1>
+    <div class="col-6 offset-3">
 
-    <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center" th:each="e : ${etudiants}">
-            <div>
-                <strong th:text="${e.getNom()}"></strong>
-                <span class="text-muted" th:text="${e.getPrenom()}"></span>
-            </div>
-            <a class="btn btn-info btn-sm" th:href="@{/detail(id=${e.getId()})}">Détails</a>
-        </li>
-    </ul>
+        <h1 class="mb-4">Liste des étudiants</h1>
 
-    <hr class="my-4">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center" th:each="e : ${etudiants}">
+                <div>
+                    <strong th:text="${e.getNom()}"></strong>
+                    <span class="text-muted" th:text="${e.getPrenom()}"></span>
+                </div>
+                <a class="btn btn-info btn-sm" th:href="@{/detail(id=${e.getId()})}">Détails</a>
+            </li>
+        </ul>
 
-    <a class="btn btn-secondary" th:href="@{/}">Retour à l'accueil</a>
+        <hr class="my-4">
+
+        <a class="btn btn-secondary" th:href="@{/}">Retour à l'accueil</a>
+    </div>
 </div>
 
 </body>

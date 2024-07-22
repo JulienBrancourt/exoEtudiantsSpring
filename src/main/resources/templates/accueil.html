@@ -8,26 +8,29 @@
 </head>
 <body>
 <div class="container mt-4">
-    <h1 class="mb-4 justify-content-center">Accueil</h1>
+    <div class="col-6 offset-3">
 
-    <nav class="nav justify-content-center mb-4">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/liste}">Liste des étudiants</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/add}">Inscription</a>
-            </li>
-        </ul>
-    </nav>
+        <h1 class="mb-4 justify-content-center">Accueil</h1>
 
-    <form th:action="@{/search}" method="get" th:object="${etudiant}">
-        <div class="mb-3 form-floating shadow">
-            <input type="text" id="nom" class="form-control" th:field="*{nom}" placeholder="Nom de l'étudiant">
-            <label for="nom" class="form-label">Nom de l'étudiant</label>
-        </div>
-        <button class="btn btn-primary" type="submit">Rechercher</button>
-    </form>
+        <nav class="nav justify-content-center mb-4">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/liste}">Liste des étudiants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/add}">Inscription</a>
+                </li>
+            </ul>
+        </nav>
+
+        <form th:action="@{/search}" method="get" th:object="${etudiant}">
+            <div class="mb-3 form-floating shadow">
+                <input type="text" id="nom" class="form-control" th:field="*{nom}" placeholder="Nom de l'étudiant">
+                <label for="nom" class="form-label">Nom de l'étudiant</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Rechercher</button>
+        </form>
+    </div>
 </div>
 
 </body>
