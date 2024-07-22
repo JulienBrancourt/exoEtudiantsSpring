@@ -13,22 +13,22 @@
     <form th:action="@{/add}" method="post" th:object="${etudiant}" class="mb-4">
         <input th:field="*{id}" type="hidden">
 
-        <div class="mb-3 form-floating">
+        <div class="mb-3 form-floating shadow">
             <input placeholder="Nom :" type="text" id="nom" th:field="*{nom}" class="form-control" required>
             <label for="nom" class="form-label">Nom :</label>
         </div>
 
-        <div class="mb-3 form-floating">
+        <div class="mb-3 form-floating shadow">
             <input placeholder="Prénom :" type="text" id="prenom" th:field="*{prenom}" class="form-control" required>
             <label for="prenom" class="form-label">Prénom :</label>
         </div>
 
-        <div class="mb-3 form-floating">
+        <div class="mb-3 form-floating shadow">
             <input placeholder="Email :" type="email" id="email" th:field="*{email}" class="form-control" required>
             <label for="email" class="form-label">Email :</label>
         </div>
 
-        <div class="mb-3 form-floating">
+        <div class="mb-3 form-floating shadow">
             <input placeholder="Âge :" type="number" id="age" th:field="*{age}" class="form-control" required>
             <label for="age" class="form-label">Âge :</label>
         </div>

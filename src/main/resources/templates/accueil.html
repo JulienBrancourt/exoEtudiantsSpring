@@ -22,7 +22,7 @@
     </nav>
 
     <form th:action="@{/search}" method="get" th:object="${etudiant}">
-        <div class="mb-3 form-floating">
+        <div class="mb-3 form-floating shadow">
             <input type="text" id="nom" class="form-control" th:field="*{nom}" placeholder="Nom de l'étudiant">
             <label for="nom" class="form-label">Nom de l'étudiant</label>
         </div>
