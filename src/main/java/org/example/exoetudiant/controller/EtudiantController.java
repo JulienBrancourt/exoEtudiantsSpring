@@ -1,4 +1,4 @@
-package org.example.exoetudiant.repository;
+package org.example.exoetudiant.controller;
 
 import org.example.exoetudiant.model.Etudiant;
 import org.example.exoetudiant.service.EtudiantService;
@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.UUID;
 
 @Controller
-public class EtudiantRepository {
+public class EtudiantController {
     private EtudiantService etudiantService;
 
-    public EtudiantRepository(EtudiantService etudiantService) {
+    public EtudiantController(EtudiantService etudiantService) {
         this.etudiantService = etudiantService;
     }
 
