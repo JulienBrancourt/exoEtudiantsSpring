@@ -2,12 +2,14 @@ package org.example.exoetudiant.controller;
 
 import org.example.exoetudiant.model.Etudiant;
 import org.example.exoetudiant.service.EtudiantService;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.UUID;
@@ -78,6 +80,14 @@ public class EtudiantController {
         Etudiant etudiant = etudiantService.getEtudiantById(id);
         model.addAttribute("etudiant", etudiant);
         return "inscription";
+    }
+
+    @GetMapping("/pb")
+    public String pb() {
+        if (true) {
+            throw new ResponseStatusException(HttpStatus.I_AM_A_TEAPOT);
+        }
+        return "liste";
     }
 
 }
