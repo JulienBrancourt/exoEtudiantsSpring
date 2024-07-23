@@ -54,7 +54,7 @@ public class EtudiantController {
         return "inscription";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/formulaire")
     public String inscrireEtudiant(@ModelAttribute Etudiant etudiant, Model model) {
         Etudiant etudiantToAdd;
         if (etudiant.getId() == null) {
@@ -62,9 +62,8 @@ public class EtudiantController {
         }
         else {
             etudiantService.updateEtudiant(etudiant);
-            etudiantToAdd =etudiantService.getEtudiantById(etudiant.getId());
+//            etudiantToAdd =etudiantService.getEtudiantById(etudiant.getId());
         }
-        model.addAttribute("etudiant", etudiantToAdd);
         return "redirect:/liste";
     }
 
